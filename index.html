@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>个人主页 | 你的名字</title>
+  <meta name="description" content="你的名字的个人主页，展示简历、论文、项目和联系方式。" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --border: #e5e7eb;
+      --section-bg: #f9fafb;
+      --card-bg: #ffffff;
+      --shadow: 0 6px 24px rgba(0,0,0,0.06);
+      --radius: 16px;
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: var(--shadow);
+      background: #eef2ff;
+    }
+
+    .name {
+      font-size: 40px;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .intro {
+      font-size: 16px;
+      max-width: 780px;
+      margin-bottom: 24px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-weight: 500;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .btn.primary:hover {
+      background: var(--primary-dark);
+      color: white;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-alt {
+      background: var(--section-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin: 0 0 24px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      margin-top: -12px;
+      margin-bottom: 24px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .publication {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .publication:last-child {
+      border-bottom: none;
+    }
+
+    .pub-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 13px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .avatar {
+        margin: 0 auto;
+      }
+
+      .name {
+        font-size: 32px;
+      }
+
+      .nav {
+        height: auto;
+        padding: 14px 0;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      section {
+        padding: 44px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">你的名字</div>
+    <nav class="nav-links">
+      <a href="#about">关于我</a>
+      <a href="#resume">简历</a>
+      <a href="#publications">论文</a>
+      <a href="#projects">项目</a>
+      <a href="#awards">荣誉</a>
+      <a href="#contact">联系我</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <img class="avatar" src="https://via.placeholder.com/400x400.png?text=Avatar" alt="头像" />
+      <div>
+        <h1 class="name">你的名字</h1>
+        <p class="subtitle">博士生 / 研究助理 / 工程师 / 应届生</p>
+        <p class="intro">
+          你好，我是你的名字，目前关注机器学习、自然语言处理、信息检索、计算机视觉等方向。
+          我希望通过研究与工程实践，探索更高效、更可靠、更可解释的智能系统。
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="resume.pdf" target="_blank">下载简历</a>
+          <a class="btn" href="https://github.com/yourname" target="_blank">GitHub</a>
+          <a class="btn" href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+          <a class="btn" href="mailto:your@email.com">邮箱联系</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">关于我</h2>
+      <p class="section-desc">简要介绍你的教育背景、研究方向和当前工作。</p>
+      <div class="card">
+        <p>
+          我是<strong>你的名字</strong>，目前就读于/就职于<strong>你的学校或单位</strong>，
+          研究方向包括<strong>方向 1</strong>、<strong>方向 2</strong>、<strong>方向 3</strong>。
+        </p>
+        <p>
+          我曾参与/主导多个研究与工程项目，关注学术研究与实际应用的结合。
+          欢迎通过邮件或 GitHub 与我联系。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">简历</h2>
+      <p class="section-desc">你可以在这里放中文简历、英文简历或多个版本。</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>中文简历</h3>
+          <p class="muted">适合国内求职、保研、申博、学术交流。</p>
+          <a class="btn primary" href="resume-cn.pdf" target="_blank">查看 PDF</a>
+        </div>
+        <div class="card">
+          <h3>英文简历</h3>
+          <p class="muted">适合国际申请、论文合作、海外交流。</p>
+          <a class="btn primary" href="resume-en.pdf" target="_blank">查看 PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="container">
+      <h2 class="section-title">论文</h2>
+      <p class="section-desc">建议按时间倒序排列，每篇论文保留标题、作者、会议期刊和链接。</p>
+
+      <div class="card">
+        <div class="publication">
+          <div class="pub-title">论文标题 1</div>
+          <div class="pub-meta">作者 A, 作者 B, 你的名字</div>
+          <div class="muted">会议/期刊名称 · 2026</div>
+          <div class="tag-list">
+            <a class="tag" href="#" target="_blank">PDF</a>
+            <a class="tag" href="#" target="_blank">Code</a>
+            <a class="tag" href="#" target="_blank">arXiv</a>
+          </div>
+        </div>
+
+        <div class="publication">
+          <div class="pub-title">论文标题 2</div>
+          <div class="pub-meta">作者 A, 你的名字, 作者 C</div>
+          <div class="muted">会议/期刊名称 · 2025</div>
+          <div class="tag-list">
+            <a class="tag" href="#" target="_blank">PDF</a>
+            <a class="tag" href="#" target="_blank">Code</a>
+          </div>
+        </div>
+
+        <div class="publication">
+          <div class="pub-title">论文标题 3</div>
+          <div class="pub-meta">你的名字, 作者 B, 作者 C</div>
+          <div class="muted">会议/期刊名称 · 2024</div>
+          <div class="tag-list">
+            <a class="tag" href="#" target="_blank">PDF</a>
+            <a class="tag" href="#" target="_blank">arXiv</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">项目</h2>
+      <p class="section-desc">展示最能体现你能力的项目，最好有代码或演示链接。</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>项目名称 1</h3>
+          <p>一句话介绍这个项目的目标、方法和效果。</p>
+          <p class="muted">技术栈：Python / PyTorch / React</p>
+          <a href="#" target="_blank">查看代码</a>
+        </div>
+        <div class="card">
+          <h3>项目名称 2</h3>
+          <p>一句话介绍这个项目的目标、方法和效果。</p>
+          <p class="muted">技术栈：Java / Spring Boot / MySQL</p>
+          <a href="#" target="_blank">查看代码</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <div class="container">
+      <h2 class="section-title">荣誉与奖励</h2>
+      <p class="section-desc">可选模块，适合奖学金、竞赛奖项、优秀论文奖等。</p>
+      <div class="card">
+        <ul>
+          <li>2026：优秀研究生奖学金</li>
+          <li>2025：XX 竞赛一等奖</li>
+          <li>2024：校级优秀学生</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">联系我</h2>
+      <p class="section-desc">建议至少保留一个常用邮箱。</p>
+      <div class="card contact-list">
+        <div>邮箱：<a href="mailto:your@email.com">your@email.com</a></div>
+        <div>GitHub：<a href="https://github.com/yourname" target="_blank">github.com/yourname</a></div>
+        <div>Google Scholar：<a href="https://scholar.google.com/" target="_blank">点击查看</a></div>
+        <div>学校主页：<a href="#" target="_blank">点击查看</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 你的名字 · Built with GitHub Pages</p>
+  </div>
+</footer>
+
+</body>
+</html>
