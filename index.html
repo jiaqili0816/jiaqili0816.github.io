@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>个人主页 | 你的名字</title>
-  <meta name="description" content="你的名字的个人主页，展示简历、论文、项目和联系方式。" />
+  <title>Jiaqi Li | Personal Homepage</title>
+  <meta name="description" content="Jiaqi Li's personal homepage for resume, publications, projects, and contact information." />
   <style>
     :root {
       --bg: #ffffff;
@@ -56,18 +56,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 64px;
+      min-height: 64px;
+      gap: 12px;
     }
 
     .brand {
       font-weight: 700;
       font-size: 18px;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       gap: 22px;
       flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links a {
@@ -188,18 +191,14 @@
       font-size: 20px;
     }
 
-    .muted {
-      color: var(--muted);
-    }
+    .muted { color: var(--muted); }
 
     .publication {
       padding: 18px 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .publication:last-child {
-      border-bottom: none;
-    }
+    .publication:last-child { border-bottom: none; }
 
     .pub-title {
       font-weight: 700;
@@ -254,10 +253,9 @@
       }
 
       .nav {
-        height: auto;
         padding: 14px 0;
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
       }
 
       .nav-links {
@@ -265,9 +263,7 @@
         gap: 14px;
       }
 
-      section {
-        padding: 44px 0;
-      }
+      section { padding: 44px 0; }
     }
   </style>
 </head>
@@ -275,14 +271,14 @@
 
 <header>
   <div class="container nav">
-    <div class="brand">你的名字</div>
+    <div class="brand">Jiaqi Li</div>
     <nav class="nav-links">
-      <a href="#about">关于我</a>
-      <a href="#resume">简历</a>
-      <a href="#publications">论文</a>
-      <a href="#projects">项目</a>
-      <a href="#awards">荣誉</a>
-      <a href="#contact">联系我</a>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -290,19 +286,20 @@
 <main>
   <section class="hero">
     <div class="container hero-grid">
-      <img class="avatar" src="https://via.placeholder.com/400x400.png?text=Avatar" alt="头像" />
+      <img class="avatar" src="https://via.placeholder.com/400x400.png?text=Avatar" alt="Jiaqi Li portrait" />
       <div>
-        <h1 class="name">你的名字</h1>
-        <p class="subtitle">博士生 / 研究助理 / 工程师 / 应届生</p>
+        <h1 class="name">Jiaqi Li</h1>
+        <p class="subtitle">PhD Student / Research Assistant / Engineer / Graduating Student</p>
         <p class="intro">
-          你好，我是你的名字，目前关注机器学习、自然语言处理、信息检索、计算机视觉等方向。
-          我希望通过研究与工程实践，探索更高效、更可靠、更可解释的智能系统。
+          Hello, I am Jiaqi Li. I am interested in machine learning, natural language processing,
+          information retrieval, and computer vision. My goal is to explore more efficient,
+          reliable, and interpretable intelligent systems through research and engineering.
         </p>
         <div class="buttons">
-          <a class="btn primary" href="resume.pdf" target="_blank">下载简历</a>
+          <a class="btn primary" href="resume.pdf" target="_blank">Download Resume</a>
           <a class="btn" href="https://github.com/yourname" target="_blank">GitHub</a>
           <a class="btn" href="https://scholar.google.com/" target="_blank">Google Scholar</a>
-          <a class="btn" href="mailto:your@email.com">邮箱联系</a>
+          <a class="btn" href="mailto:your@email.com">Email</a>
         </div>
       </div>
     </div>
@@ -310,16 +307,16 @@
 
   <section id="about">
     <div class="container">
-      <h2 class="section-title">关于我</h2>
-      <p class="section-desc">简要介绍你的教育背景、研究方向和当前工作。</p>
+      <h2 class="section-title">About Me</h2>
+      <p class="section-desc">A short introduction to your background, research interests, and current work.</p>
       <div class="card">
         <p>
-          我是<strong>你的名字</strong>，目前就读于/就职于<strong>你的学校或单位</strong>，
-          研究方向包括<strong>方向 1</strong>、<strong>方向 2</strong>、<strong>方向 3</strong>。
+          I am <strong>Jiaqi Li</strong>, currently studying/working at <strong>Your University or Institution</strong>.
+          My research interests include <strong>Topic 1</strong>, <strong>Topic 2</strong>, and <strong>Topic 3</strong>.
         </p>
         <p>
-          我曾参与/主导多个研究与工程项目，关注学术研究与实际应用的结合。
-          欢迎通过邮件或 GitHub 与我联系。
+          I have participated in and led several research and engineering projects, with a strong focus on connecting academic research and real-world applications.
+          Feel free to contact me by email or GitHub.
         </p>
       </div>
     </div>
@@ -327,18 +324,18 @@
 
   <section id="resume" class="section-alt">
     <div class="container">
-      <h2 class="section-title">简历</h2>
-      <p class="section-desc">你可以在这里放中文简历、英文简历或多个版本。</p>
+      <h2 class="section-title">Resume</h2>
+      <p class="section-desc">You can place multiple versions of your CV here.</p>
       <div class="card-grid">
         <div class="card">
-          <h3>中文简历</h3>
-          <p class="muted">适合国内求职、保研、申博、学术交流。</p>
-          <a class="btn primary" href="resume-cn.pdf" target="_blank">查看 PDF</a>
+          <h3>Chinese Resume</h3>
+          <p class="muted">Suitable for local applications and academic communication.</p>
+          <a class="btn primary" href="resume-cn.pdf" target="_blank">View PDF</a>
         </div>
         <div class="card">
-          <h3>英文简历</h3>
-          <p class="muted">适合国际申请、论文合作、海外交流。</p>
-          <a class="btn primary" href="resume-en.pdf" target="_blank">查看 PDF</a>
+          <h3>English Resume</h3>
+          <p class="muted">Suitable for international applications and collaborations.</p>
+          <a class="btn primary" href="resume-en.pdf" target="_blank">View PDF</a>
         </div>
       </div>
     </div>
@@ -346,14 +343,14 @@
 
   <section id="publications">
     <div class="container">
-      <h2 class="section-title">论文</h2>
-      <p class="section-desc">建议按时间倒序排列，每篇论文保留标题、作者、会议期刊和链接。</p>
+      <h2 class="section-title">Publications</h2>
+      <p class="section-desc">List your papers in reverse chronological order with links to PDF, code, and arXiv.</p>
 
       <div class="card">
         <div class="publication">
-          <div class="pub-title">论文标题 1</div>
-          <div class="pub-meta">作者 A, 作者 B, 你的名字</div>
-          <div class="muted">会议/期刊名称 · 2026</div>
+          <div class="pub-title">Paper Title 1</div>
+          <div class="pub-meta">Author A, Author B, Jiaqi Li</div>
+          <div class="muted">Conference / Journal Name · 2026</div>
           <div class="tag-list">
             <a class="tag" href="#" target="_blank">PDF</a>
             <a class="tag" href="#" target="_blank">Code</a>
@@ -362,9 +359,9 @@
         </div>
 
         <div class="publication">
-          <div class="pub-title">论文标题 2</div>
-          <div class="pub-meta">作者 A, 你的名字, 作者 C</div>
-          <div class="muted">会议/期刊名称 · 2025</div>
+          <div class="pub-title">Paper Title 2</div>
+          <div class="pub-meta">Author A, Jiaqi Li, Author C</div>
+          <div class="muted">Conference / Journal Name · 2025</div>
           <div class="tag-list">
             <a class="tag" href="#" target="_blank">PDF</a>
             <a class="tag" href="#" target="_blank">Code</a>
@@ -372,9 +369,9 @@
         </div>
 
         <div class="publication">
-          <div class="pub-title">论文标题 3</div>
-          <div class="pub-meta">你的名字, 作者 B, 作者 C</div>
-          <div class="muted">会议/期刊名称 · 2024</div>
+          <div class="pub-title">Paper Title 3</div>
+          <div class="pub-meta">Jiaqi Li, Author B, Author C</div>
+          <div class="muted">Conference / Journal Name · 2024</div>
           <div class="tag-list">
             <a class="tag" href="#" target="_blank">PDF</a>
             <a class="tag" href="#" target="_blank">arXiv</a>
@@ -386,20 +383,20 @@
 
   <section id="projects" class="section-alt">
     <div class="container">
-      <h2 class="section-title">项目</h2>
-      <p class="section-desc">展示最能体现你能力的项目，最好有代码或演示链接。</p>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-desc">Show your most representative projects with code or demo links.</p>
       <div class="card-grid">
         <div class="card">
-          <h3>项目名称 1</h3>
-          <p>一句话介绍这个项目的目标、方法和效果。</p>
-          <p class="muted">技术栈：Python / PyTorch / React</p>
-          <a href="#" target="_blank">查看代码</a>
+          <h3>Project 1</h3>
+          <p>A short description of the goal, method, and results of this project.</p>
+          <p class="muted">Tech stack: Python / PyTorch / React</p>
+          <a href="#" target="_blank">View Code</a>
         </div>
         <div class="card">
-          <h3>项目名称 2</h3>
-          <p>一句话介绍这个项目的目标、方法和效果。</p>
-          <p class="muted">技术栈：Java / Spring Boot / MySQL</p>
-          <a href="#" target="_blank">查看代码</a>
+          <h3>Project 2</h3>
+          <p>A short description of the goal, method, and results of this project.</p>
+          <p class="muted">Tech stack: Java / Spring Boot / MySQL</p>
+          <a href="#" target="_blank">View Code</a>
         </div>
       </div>
     </div>
@@ -407,13 +404,13 @@
 
   <section id="awards">
     <div class="container">
-      <h2 class="section-title">荣誉与奖励</h2>
-      <p class="section-desc">可选模块，适合奖学金、竞赛奖项、优秀论文奖等。</p>
+      <h2 class="section-title">Awards & Honors</h2>
+      <p class="section-desc">Optional section for scholarships, competition awards, and honors.</p>
       <div class="card">
         <ul>
-          <li>2026：优秀研究生奖学金</li>
-          <li>2025：XX 竞赛一等奖</li>
-          <li>2024：校级优秀学生</li>
+          <li>2026: Outstanding Graduate Scholarship</li>
+          <li>2025: First Prize in XX Competition</li>
+          <li>2024: Outstanding Student Award</li>
         </ul>
       </div>
     </div>
@@ -421,13 +418,13 @@
 
   <section id="contact" class="section-alt">
     <div class="container">
-      <h2 class="section-title">联系我</h2>
-      <p class="section-desc">建议至少保留一个常用邮箱。</p>
+      <h2 class="section-title">Contact</h2>
+      <p class="section-desc">Keep at least one active email address here.</p>
       <div class="card contact-list">
-        <div>邮箱：<a href="mailto:your@email.com">your@email.com</a></div>
-        <div>GitHub：<a href="https://github.com/yourname" target="_blank">github.com/yourname</a></div>
-        <div>Google Scholar：<a href="https://scholar.google.com/" target="_blank">点击查看</a></div>
-        <div>学校主页：<a href="#" target="_blank">点击查看</a></div>
+        <div>Email: <a href="mailto:your@email.com">your@email.com</a></div>
+        <div>GitHub: <a href="https://github.com/yourname" target="_blank">github.com/yourname</a></div>
+        <div>Google Scholar: <a href="https://scholar.google.com/" target="_blank">View profile</a></div>
+        <div>Institution Page: <a href="#" target="_blank">View profile</a></div>
       </div>
     </div>
   </section>
@@ -435,7 +432,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 你的名字 · Built with GitHub Pages</p>
+    <p>© 2026 Jiaqi Li · Built with GitHub Pages</p>
   </div>
 </footer>
 
