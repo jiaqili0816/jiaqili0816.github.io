@@ -6,57 +6,45 @@
   <title>Jiaqi Li | Personal Homepage</title>
   <meta name="description" content="Jiaqi Li's personal homepage for resume, publications, projects, and contact information." />
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --border: #e5e7eb;
-      --section-bg: #f9fafb;
-      --card-bg: #ffffff;
-      --shadow: 0 6px 24px rgba(0,0,0,0.06);
-      --radius: 16px;
-      --max-width: 1100px;
-    }
+    :root { --bg:#ffffff; --text:#1f2937; --muted:#6b7280; --primary:#2563eb; --primary-dark:#1d4ed8; --border:#e5e7eb; --section-bg:#f9fafb; --card-bg:#ffffff; --shadow:0 6px 24px rgba(0,0,0,0.06); --radius:16px; --max-width:1100px; }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { color: var(--primary-dark); text-decoration: underline; }
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
-    header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-    .nav { display: flex; justify-content: space-between; align-items: center; min-height: 64px; gap: 12px; }
-    .brand { font-weight: 700; font-size: 18px; white-space: nowrap; }
-    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end; }
-    .nav-links a { color: var(--text); font-size: 15px; }
-    .hero { padding: 72px 0 56px; background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%); border-bottom: 1px solid var(--border); }
-    .hero-grid { display: grid; grid-template-columns: 180px 1fr; gap: 32px; align-items: center; }
-    .avatar { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: var(--shadow); background: #eef2ff; }
-    .name { font-size: 40px; margin: 0 0 10px; line-height: 1.2; }
-    .subtitle { font-size: 18px; color: var(--muted); margin: 0 0 16px; }
-    .intro { font-size: 16px; max-width: 780px; margin-bottom: 24px; }
-    .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--border); background: #fff; color: var(--text); font-weight: 500; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
-    .btn.primary { background: var(--primary); color: white; border-color: var(--primary); }
-    .btn.primary:hover { background: var(--primary-dark); color: white; text-decoration: none; }
-    section { padding: 56px 0; }
-    .section-alt { background: var(--section-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .section-title { font-size: 28px; margin: 0 0 24px; }
-    .section-desc { color: var(--muted); margin-top: -12px; margin-bottom: 24px; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
-    .card h3 { margin-top: 0; margin-bottom: 10px; font-size: 20px; }
-    .muted { color: var(--muted); }
-    .publication { padding: 18px 0; border-bottom: 1px solid var(--border); }
-    .publication:last-child { border-bottom: none; }
-    .pub-title { font-weight: 700; margin-bottom: 6px; }
-    .pub-meta { color: var(--muted); margin-bottom: 8px; }
-    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .tag { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; font-size: 13px; }
-    .contact-list { display: grid; gap: 10px; }
-    footer { padding: 28px 0 40px; color: var(--muted); text-align: center; border-top: 1px solid var(--border); }
-    @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .avatar { margin: 0 auto; } .name { font-size: 32px; } .nav { padding: 14px 0; flex-direction: column; align-items: center; } .nav-links { justify-content: center; gap: 14px; } section { padding: 44px 0; } }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; color:var(--text); background:var(--bg); line-height:1.7; }
+    a { color:var(--primary); text-decoration:none; }
+    a:hover { color:var(--primary-dark); text-decoration:underline; }
+    .container { max-width:var(--max-width); margin:0 auto; padding:0 20px; }
+    header { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+    .nav { display:flex; justify-content:space-between; align-items:center; min-height:64px; gap:12px; }
+    .brand { font-weight:700; font-size:18px; white-space:nowrap; }
+    .nav-links { display:flex; gap:22px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a { color:var(--text); font-size:15px; }
+    .hero { padding:72px 0 56px; background:linear-gradient(180deg,#f8fbff 0%,#ffffff 100%); border-bottom:1px solid var(--border); }
+    .hero-grid { display:grid; grid-template-columns:180px 1fr; gap:32px; align-items:center; }
+    .avatar { width:180px; height:180px; border-radius:50%; object-fit:cover; border:4px solid #fff; box-shadow:var(--shadow); background:#eef2ff; }
+    .name { font-size:40px; margin:0 0 10px; line-height:1.2; }
+    .subtitle { font-size:18px; color:var(--muted); margin:0 0 16px; }
+    .intro { font-size:16px; max-width:780px; margin-bottom:24px; }
+    .buttons { display:flex; flex-wrap:wrap; gap:12px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; border:1px solid var(--border); background:#fff; color:var(--text); font-weight:500; box-shadow:0 1px 2px rgba(0,0,0,0.03); }
+    .btn.primary { background:var(--primary); color:white; border-color:var(--primary); }
+    .btn.primary:hover { background:var(--primary-dark); color:white; text-decoration:none; }
+    section { padding:56px 0; }
+    .section-alt { background:var(--section-bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .section-title { font-size:28px; margin:0 0 24px; }
+    .section-desc { color:var(--muted); margin-top:-12px; margin-bottom:24px; }
+    .card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+    .card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); }
+    .card h3 { margin-top:0; margin-bottom:10px; font-size:20px; }
+    .muted { color:var(--muted); }
+    .publication { padding:18px 0; border-bottom:1px solid var(--border); }
+    .publication:last-child { border-bottom:none; }
+    .pub-title { font-weight:700; margin-bottom:6px; }
+    .pub-meta { color:var(--muted); margin-bottom:8px; }
+    .tag-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .tag { display:inline-block; padding:4px 10px; border-radius:999px; background:#eff6ff; color:#1d4ed8; font-size:13px; }
+    .contact-list { display:grid; gap:10px; }
+    footer { padding:28px 0 40px; color:var(--muted); text-align:center; border-top:1px solid var(--border); }
+    @media (max-width:768px) { .hero-grid { grid-template-columns:1fr; text-align:center; } .avatar { margin:0 auto; } .name { font-size:32px; } .nav { padding:14px 0; flex-direction:column; align-items:center; } .nav-links { justify-content:center; gap:14px; } section { padding:44px 0; } }
   </style>
 </head>
 <body>
@@ -81,7 +69,7 @@
         <p class="subtitle">M.S. in CSE, University of Michigan</p>
         <p class="intro">Hello, I am Jiaqi Li, a first-year master's student in Computer Science and Engineering at the University of Michigan. I am interested in machine learning, natural language processing, information retrieval, and computer vision. My goal is to explore more efficient, reliable, and interpretable intelligent systems through research and engineering.</p>
         <div class="buttons">
-          <a class="btn primary" href="cv.pdf" target="_blank">Download CV</a>
+          <a class="btn primary" href="JiaqiLi_CV1.pdf" target="_blank">Download CV</a>
           <a class="btn" href="https://github.com/yourname" target="_blank">GitHub</a>
           <a class="btn" href="https://scholar.google.com/" target="_blank">Google Scholar</a>
           <a class="btn" href="mailto:your@email.com">Email</a>
@@ -107,7 +95,7 @@
         <div class="card">
           <h3>Curriculum Vitae</h3>
           <p class="muted">Updated CV in PDF format.</p>
-          <a class="btn primary" href="cv.pdf" target="_blank">View CV</a>
+          <a class="btn primary" href="JiaqiLi_CV1.pdf" target="_blank">View CV</a>
         </div>
       </div>
     </div>
